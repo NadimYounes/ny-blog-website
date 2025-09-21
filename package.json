@@ -1,0 +1,34 @@
+{
+  "name": "ny-portfolio",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "lint": "eslint .",
+    "format": "prettier -w .",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "astro": "^4.14.0",
+    "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/sitemap": "^3.1.5",
+    "@astrojs/rss": "^4.0.6"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "tailwindcss": "^3.4.17",
+    "postcss": "^8.4.47",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.12.0",
+    "@eslint/js": "^9.12.0",
+    "eslint-plugin-astro": "^1.2.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "prettier": "^3.3.3",
+    "prettier-plugin-astro": "^0.14.0"
+  }
+}
+

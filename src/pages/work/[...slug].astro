@@ -1,0 +1,20 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const items = await getCollection('work');
+  return items.map((entry) => ({ params: { slug: entry.slug }, props: { entry } }));
+}
+
+const { entry } = Astro.props as { entry: Awaited<ReturnType<typeof getCollection>>[number] };
+const { Content } = await entry.render();
+---
+<BaseLayout title={entry.data.title} description={entry.data.description} hideFooter={true}>
+  <article class="prose dark:prose-invert max-w-none">
+    <h1 class="font-display">{entry.data.title}</h1>
+    {entry.data.description && <p class="opacity-70">{entry.data.description}</p>}
+    <Content />
+  </article>
+</BaseLayout>
+

@@ -1,0 +1,10 @@
+node_modules
+.astro
+dist
+.DS_Store
+.pnp.cjs
+.pnp.loader.mjs
+pnpm-lock.yaml
+yarn.lock
+npm-debug.log*
+

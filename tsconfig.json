@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "jsx": "preserve",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "types": ["astro/client"],
+    "baseUrl": "."
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.astro",
+    "src/content/**/*.md",
+    "src/content/**/*.mdx"
+  ]
+}

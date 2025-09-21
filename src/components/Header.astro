@@ -1,0 +1,16 @@
+---
+import ThemeToggle from './ThemeToggle.astro';
+---
+<header class="py-5">
+  <div class="mx-auto max-w-3xl px-4">
+    <nav class="glass rounded-lg border shadow px-6 py-3 flex items-center justify-between text-base w-full font-mono">
+      <a href="/" class="font-semibold">NY</a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="opacity-80 hover:opacity-100">Home</a>
+        <a href="/work" class="opacity-80 hover:opacity-100">Work</a>
+        <a href="#contact" class="opacity-80 hover:opacity-100">Contact</a>
+        <ThemeToggle />
+      </div>
+    </nav>
+  </div>
+</header>

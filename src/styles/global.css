@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CRT-inspired overlay */
+.scanlines::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 100% 3px;
+  mix-blend-mode: overlay;
+}
+
+.noise::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22><filter id=%22n%22 x=%220%22 y=%220%22 width=%22100%25%22 height=%22100%25%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%222%22 stitchTiles=%22stitch%22/></filter><rect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22 opacity=%220.03%22/></svg>');
+  opacity: 0.5;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Soft CRT text glow */
+.crt-soft {
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.25);
+}
+
+/* Pixel icons look crisp */
+.pixelated {
+  image-rendering: pixelated;
+}
+
+/* Monospaced numerals */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Blinking terminal cursor utility */
+.cursor-blink::after {
+  content: '▌';
+  margin-left: 2px;
+  animation: cursorBlink 1s step-start infinite;
+}
+
+@keyframes cursorBlink {
+  50% { opacity: 0; }
+}
+
+/* Subtle grid background for both themes */
+.grid-bg {
+  background-image:
+    repeating-linear-gradient(0deg, rgba(0,0,0,0.06) 0px, rgba(0,0,0,0.06) 1px, transparent 1px, transparent 24px),
+    repeating-linear-gradient(90deg, rgba(0,0,0,0.06) 0px, rgba(0,0,0,0.06) 1px, transparent 1px, transparent 24px);
+}
+.dark .grid-bg {
+  background-image:
+    repeating-linear-gradient(0deg, rgba(255,255,255,0.06) 0px, rgba(255,255,255,0.06) 1px, transparent 1px, transparent 24px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.06) 0px, rgba(255,255,255,0.06) 1px, transparent 1px, transparent 24px);
+}
